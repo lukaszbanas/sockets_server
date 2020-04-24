@@ -1,6 +1,6 @@
 <?php
 
-use SocketsServer\Classes\Chat;
+use SocketsServer\Classes\Server;
 use Ratchet\Http\HttpServer;
 use Ratchet\Server\IoServer;
 use Ratchet\WebSocket\WsServer;
@@ -10,7 +10,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPAR
 $server = IoServer::factory(
     new HttpServer(
         new WsServer(
-            new Chat()
+            new Server()
         )
     ), 8081);
 $server->run();

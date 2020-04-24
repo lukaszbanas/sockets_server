@@ -5,7 +5,7 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 use SplObjectStorage;
 
-class Chat implements MessageComponentInterface
+class Server implements MessageComponentInterface
 {
     /**
      * @var SplObjectStorage
