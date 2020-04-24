@@ -24,7 +24,7 @@ class Server implements MessageComponentInterface
     {
         $this->clients->attach($conn);
 
-        echo "New connection! ({$conn->resourceId})\n";
+        echo "New connection!\n";
     }
 
     /**
@@ -52,7 +52,7 @@ class Server implements MessageComponentInterface
     {
         $this->clients->detach($conn);
 
-        echo "Connection {$conn->resourceId} has disconnected\n";
+        echo "Connection has disconnected\n";
     }
 
     /**
@@ -64,5 +64,13 @@ class Server implements MessageComponentInterface
         echo "An error has occurred: {$e->getMessage()}\n";
 
         $conn->close();
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberOfConnectedClients(): int
+    {
+        return count($this->clients);
     }
 }
