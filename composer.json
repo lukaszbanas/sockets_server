@@ -1,0 +1,14 @@
+{
+  "name": "lbanas/sockets_server",
+  "description": "web sockets php server",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "require": {
+    "cboden/ratchet": "^0.4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "ChatApp\\": "src"
+    }
+  }
+}
