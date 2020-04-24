@@ -10,7 +10,7 @@ class Chat implements MessageComponentInterface
     /**
      * @var SplObjectStorage
      */
-    protected $clients;
+    protected SplObjectStorage $clients;
 
     public function __construct()
     {
