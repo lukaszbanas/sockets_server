@@ -33,10 +33,10 @@ class Server implements MessageComponentInterface
      */
     public function onMessage(ConnectionInterface $from, $msg): void
     {
-        $numRecv = count($this->clients) - 1;
+        $numRecv = $this->getNumberOfConnectedClients() - 1;
 
-        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
-            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
+        echo sprintf('Connection sending message "%s" to %d other connection%s' . "\n"
+            , $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
         foreach ($this->clients as $client) {
             if ($from !== $client) {

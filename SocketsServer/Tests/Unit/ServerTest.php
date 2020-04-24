@@ -51,6 +51,17 @@ class ServerTest extends TestCase
         $this->assertEquals(0, $this->server->getNumberOfConnectedClients());
     }
 
+    public function testOnMessage(): void
+    {
+        $conn1 = $this->getConnectionMock();
+        $conn2 = $this->getConnectionMock();
+        $this->server->onOpen($conn1);
+        $this->server->onOpen($conn2);
+
+        $this->server->onMessage($conn1, 'test');
+        $this->assertEquals('test', $conn2->last['send']);
+    }
+
     /**
      * @runInSeparateProcess
      */
