@@ -5,10 +5,14 @@
   "license": "proprietary",
   "require": {
     "cboden/ratchet": "^0.4.2"
+  }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "ChatApp\\": "src"
+      "SocketsServer\\": "SocketsServer"
     }
   }
 }

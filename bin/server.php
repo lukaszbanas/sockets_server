@@ -1,6 +1,6 @@
 <?php
 
-use ChatApp\Chat;
+use SocketsServer\Classes\Chat;
 use Ratchet\Http\HttpServer;
 use Ratchet\Server\IoServer;
 use Ratchet\WebSocket\WsServer;

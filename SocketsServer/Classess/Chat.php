@@ -1,4 +1,4 @@
-<?php namespace ChatApp;
+<?php namespace SocketsServer\Classes;
 
 use Exception;
 use Ratchet\MessageComponentInterface;
