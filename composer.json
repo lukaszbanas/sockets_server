@@ -4,7 +4,8 @@
   "minimum-stability": "stable",
   "license": "proprietary",
   "require": {
-    "cboden/ratchet": "^0.4.2"
+    "cboden/ratchet": "^0.4.2",
+    "phan/phan": "^2.7"
   },
   "scripts": {
     "test": "phpunit"
@@ -12,7 +13,9 @@
   "bin": ["bin/server"],
   "require-dev": {
     "roave/security-advisories": "dev-master",
-    "phpunit/phpunit": "^9.0"
+    "phpunit/phpunit": "^9.0",
+    "squizlabs/php_codesniffer": "3.*",
+    "phpmd/phpmd" : "@stable"
   },
   "autoload": {
     "psr-4": {
