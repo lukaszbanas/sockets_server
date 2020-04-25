@@ -2,15 +2,17 @@ plugins:
   phpcodesniffer:
     enabled: true
     config:
-      standard: "PSR1,PSR2,PHPCS"
+      standard: "PSR1,PSR2"
+    ignore: "*/Tests/*"
   phpmd:
     enabled: true
+    config:
+      file_extensions: "php"
+      rulesets: "cleancode,codesize,design,naming,unusedcode"
   phan:
     enabled: true
     config:
       file_extensions: "php"
-  sonar-php:
-    enabled: true
-    config:
-      tests_patterns:
-        - SocketsServer/Tests/**
+exclude_patterns:
+  - "**/Tests/"
+  - "**/vendor/"

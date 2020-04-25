@@ -34,7 +34,7 @@ class Server implements MessageComponentInterface
 
     /**
      * @param ConnectionInterface $from
-     * @param string              $msg
+     * @param string $msg
      */
     public function onMessage(ConnectionInterface $from, $msg): void
     {
@@ -66,11 +66,11 @@ class Server implements MessageComponentInterface
 
     /**
      * @param ConnectionInterface $conn
-     * @param Exception           $e
+     * @param Exception $exception
      */
-    public function onError(ConnectionInterface $conn, Exception $e): void
+    public function onError(ConnectionInterface $conn, Exception $exception): void
     {
-        echo "An error has occurred: {$e->getMessage()}\n";
+        echo "An error has occurred: {$exception->getMessage()}\n";
 
         $conn->close();
     }
