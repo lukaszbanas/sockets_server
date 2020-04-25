@@ -5,6 +5,11 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 use SplObjectStorage;
 
+/**
+ * Class Server
+ *
+ * @package SocketsServer\Classes
+ */
 class Server implements MessageComponentInterface
 {
     /**
@@ -35,8 +40,12 @@ class Server implements MessageComponentInterface
     {
         $numRecv = $this->getNumberOfConnectedClients() - 1;
 
-        echo sprintf('Connection sending message "%s" to %d other connection%s' . "\n"
-            , $msg, $numRecv, $numRecv === 1 ? '' : 's');
+        echo sprintf(
+            'Connection sending message "%s" to %d other connection%s' . "\n",
+            $msg,
+            $numRecv,
+            $numRecv === 1 ? '' : 's'
+        );
 
         foreach ($this->clients as $client) {
             if ($from !== $client) {
