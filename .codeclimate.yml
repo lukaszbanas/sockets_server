@@ -2,9 +2,13 @@ plugins:
   phpcodesniffer:
     enabled: true
     config:
-      standard: "PSR1,PSR2,PHPCS"
+      standard: "PSR1,PSR2"
+    ignore: "*/Tests/*"
   phpmd:
     enabled: true
+    config:
+      file_extensions: "php"
+      rulesets: "cleancode,codesize,design,naming,unusedcode"
   phan:
     enabled: true
     config:
