@@ -36,7 +36,7 @@ class Server implements MessageComponentInterface
         $numRecv = $this->getNumberOfConnectedClients() - 1;
 
         echo sprintf('Connection sending message "%s" to %d other connection%s' . "\n"
-            , $msg, $numRecv, $numRecv == 1 ? '' : 's');
+            , $msg, $numRecv, $numRecv === 1 ? '' : 's');
 
         foreach ($this->clients as $client) {
             if ($from !== $client) {
@@ -57,11 +57,11 @@ class Server implements MessageComponentInterface
 
     /**
      * @param ConnectionInterface $conn
-     * @param Exception $e
+     * @param Exception $exception
      */
-    public function onError(ConnectionInterface $conn, Exception $e): void
+    public function onError(ConnectionInterface $conn, Exception $exception): void
     {
-        echo "An error has occurred: {$e->getMessage()}\n";
+        echo "An error has occurred: {$exception->getMessage()}\n";
 
         $conn->close();
     }
